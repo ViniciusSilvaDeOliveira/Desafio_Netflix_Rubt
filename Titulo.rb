@@ -1,38 +1,28 @@
 class Titulo
-    def getNome(nome)
-        return nome
+    attr_accessor :nome, :ano_lancamento, :incluido_no_plano, :soma_avaliacoes, :total_avaliacoes, :duracao_em_minutos
+
+    def initialize
+        @nome = ''
+        @ano_lancamento = 0
+        @incluido_no_plano = false
+        @soma_avaliacoes = 0
+        @total_avaliacoes = 0
+        @duracao_em_minutos = 0
     end
 
-    def getAnoLancamento(anoLancamento)
-        return anoLancamento
+    def exibeFichaTecnica
+        puts "Nome: #{nome}"
+        puts "Ano de lançamento: #{ano_lancamento}"
     end
 
-    def getIncluidoNoPlano(incluidoPlano)
-        return incluidoPlano
+    def avalia(nota)
+        self.soma_avaliacoes ||= 0
+        self.total_avaliacoes ||= 0
+        self.soma_avaliacoes += nota
+        self.total_avaliacoes += 1
     end
 
-    def getSomaDasAvaliacoes(somaAvaliacoes)
-        return somaAvaliacoes
+    def pegaMedia
+        return self.total_avaliacoes != 0 ? self.soma_avaliacoes / self.total_avaliacoes : 0
     end
-
-    def getTotalDeAvaliacoes(totalAvaliacoes)
-        return totalAvaliacoes
-    end
-
-    def getDuracaoEmMinutos(duracaoEmMinutos)
-        return duracaoEmMinutos
-    end
-
-    # #def exibeFichaTecnica
-    #     #puts "Nome: #{getNome}"
-    #    # puts "Ano de lançamento: #{getAnoLancamento}"
-    #     puts "Duração em minutos: #{getDuracaoEmMinutos}"
-    # end
-
-    #def avalia(nota)
-       # getSomaDasAvaliacoes += nota
-       # getTotalDeAvaliacoes++
-    #def pegaMedia()
-        #return getSomaDasAvaliacoes / getTotalDeAvaliacoes
-    #end
 end

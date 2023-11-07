@@ -1,11 +1,9 @@
 require_relative 'Titulo'
 
 class Filme < Titulo
-    def initialize
-        super
-    end
+    attr_accessor :diretor
 
-    def getDiretor(diretor)
-        return diretor
+    def initialize
+        @diretor = ''
     end
 end

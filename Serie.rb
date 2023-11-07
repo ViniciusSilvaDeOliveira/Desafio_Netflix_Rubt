@@ -1,9 +1,8 @@
 class Serie < Titulo
-    def getTemporadas(temporadas)
-        return temporadas
-    end
+    attr_accessor :temporadas, :episodios
 
-    def getEpisodiosPorTemporadas(episodios)
-        return episodios
+    def initialize
+        @temporadas = ''
+        @episodios = 0
     end
 end

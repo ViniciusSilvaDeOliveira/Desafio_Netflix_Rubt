@@ -1,15 +1,29 @@
 require_relative '../DesafioRuby/Filme'
 require_relative '../DesafioRuby/Titulo.rb'
+require_relative '../DesafioRuby/Serie.rb'
 
-    meuFilme = Filme.new
-    @nome = meuFilme.getNome('As Marvels')
-    @ano = meuFilme.getAnoLancamento(2023)
-    @duracao = meuFilme.getDuracaoEmMinutos(180)
+meu_filme = Filme.new
+minha_serie = Serie.new
 
-    def exibeFichaTecnica
-        puts "Nome: #{@nome}"
-        puts "Ano de lançamento: #{@ano}"
-        puts "Duração em minutos: #{@duracao}"
-    end
+puts "\n-----Filmes-----"
+meu_filme.nome = 'As Marvels'
+meu_filme.ano_lancamento = 2023
+meu_filme.duracao_em_minutos = 180
+meu_filme.diretor = 'Nia DaCosta'
 
-    puts exibeFichaTecnica
+meu_filme.exibeFichaTecnica
+puts "Diretor(a) do filme: #{meu_filme.diretor}"
+
+meu_filme.avalia(10)
+meu_filme.avalia(8)
+puts "Média da nota do filme: #{meu_filme.pegaMedia}"
+
+puts "\n-----Séries-----"
+minha_serie.nome = "Loki"
+minha_serie.ano_lancamento = 2021
+minha_serie.temporadas = 2
+minha_serie.episodios = 6
+
+minha_serie.exibeFichaTecnica
+puts "Série de #{minha_serie.temporadas} temporada(s)"
+puts "#{minha_serie.episodios} episódios por temporada"
