@@ -1,6 +1,6 @@
-require_relative '../DesafioRuby/Filme'
-require_relative '../DesafioRuby/Titulo.rb'
-require_relative '../DesafioRuby/Serie.rb'
+require_relative 'Filme'
+require_relative 'Titulo'
+require_relative 'Serie'
 
 meu_filme = Filme.new
 minha_serie = Serie.new

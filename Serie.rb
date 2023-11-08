@@ -1,3 +1,5 @@
+require_relative 'Titulo'
+
 class Serie < Titulo
     attr_accessor :temporadas, :episodios
 
